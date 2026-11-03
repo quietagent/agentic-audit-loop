@@ -1,0 +1,44 @@
+{
+  "id": "aalPhase2Check01",
+  "name": "Phase 2 check (Agentic Audit Loop)",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "6b0f2c1e-5d0a-4a57-9a51-2f1f0c7d9a01",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "executeOnce": true,
+        "command": "whoami && node --version && git --version && claude --version && node C:\\Projects\\Agentic_Audit_Loop\\scripts\\run_auditor.js --project C:\\Projects\\Agentic_Audit_Loop\\tests\\tmp\\phase2-check --goal-check"
+      },
+      "id": "6b0f2c1e-5d0a-4a57-9a51-2f1f0c7d9a02",
+      "name": "Execute Command",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [240, 0]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Execute Command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "tags": []
+}

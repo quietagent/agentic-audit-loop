@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(/n8n-loop/secrets/**)",
+      "mcp__n8n"
+    ]
+  }
+}
